@@ -14,7 +14,7 @@ let ITEM_COUNT:Int              =   3
 let ITEM_SPACE:CGFloat          =   2.0
 let CELL_HEIGHT_RATIO:CGFloat   =   3.0 / 4.0
 
-class ShotsScreenViewController: UIViewController, ShotsScreenViewProtocol,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+class ShotsScreenViewController: UIViewController, ShotsScreenViewProtocol,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ErrorCollectionViewCellDelegate
 {
     
     //IBOutlet
@@ -163,6 +163,7 @@ class ShotsScreenViewController: UIViewController, ShotsScreenViewProtocol,UICol
         else if self.controllerState == ViewControllerState.Error
         {
             cell    =   collectionView.dequeueReusableCellWithReuseIdentifier(ErrorCollectionViewCell.classNameReuseIdentifier, forIndexPath: indexPath)
+            (cell as! ErrorCollectionViewCell).delegate  =   self
         }
         else if self.controllerState == ViewControllerState.Loaded
         {
@@ -293,6 +294,15 @@ class ShotsScreenViewController: UIViewController, ShotsScreenViewProtocol,UICol
         self.loadMoreActionEnabled  =   false
     }
     
+    
+    
+    
+    //MARK: ErrorCollectionViewCellDelegate
+    
+    func errorCollectionViewCellDidTapTryAgain(cell collectionViewCell: ErrorCollectionViewCell)
+    {
+        self.fetchShots(sorting: AllSorts[self.sortControl.selectedSegmentIndex])
+    }
     
     
     //MARK: Actions

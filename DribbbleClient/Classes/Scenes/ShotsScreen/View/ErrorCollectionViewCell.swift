@@ -8,11 +8,24 @@
 
 import UIKit
 
+
+protocol ErrorCollectionViewCellDelegate:class {
+    func errorCollectionViewCellDidTapTryAgain( cell collectionViewCell:ErrorCollectionViewCell )
+}
+
 class ErrorCollectionViewCell: UICollectionViewCell {
 
+    weak var delegate:ErrorCollectionViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    @IBAction func tryAgainTapped(sender: AnyObject)
+    {
+        guard let delegate = self.delegate else {return}
+        
+        delegate.errorCollectionViewCellDidTapTryAgain(cell: self)
+    }
 }
