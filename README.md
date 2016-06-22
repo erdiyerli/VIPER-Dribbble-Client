@@ -2,4 +2,4 @@
 
 This project is an example of using **VIPER** architecture with multiple modules and TDD in iOS.
 
-* X-code 7.3 Swift 2.2
+* Xcode 7.3.1 Swift 2.2
