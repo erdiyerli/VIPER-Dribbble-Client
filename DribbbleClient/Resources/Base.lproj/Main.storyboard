@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yfU-Vl-EXs">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Login Screen-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LoginScreenViewController" id="BYZ-38-t0r" customClass="LoginScreenViewController" customModule="DribbbleClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9Y-ee-Xbf">
+                                <rect key="frame" x="0.0" y="609" width="375" height="58"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.30588235289999999" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="G9Y-ee-Xbf" secondAttribute="height" multiplier="375:58" id="pgO-VV-HfO"/>
+                                </constraints>
+                                <state key="normal" title="Connect With Dribble">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dribbbleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rxX-iw-kbn"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="vuP-RJ-mZK">
+                                <rect key="frame" x="87" y="628" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="OfV-s3-Mge"/>
+                                    <constraint firstAttribute="height" constant="20" id="buS-dh-Spd"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.23529411759999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="G9Y-ee-Xbf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2bk-je-NMb"/>
+                            <constraint firstItem="vuP-RJ-mZK" firstAttribute="centerX" secondItem="G9Y-ee-Xbf" secondAttribute="centerX" multiplier="0.52" id="7r0-MF-7aU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G9Y-ee-Xbf" secondAttribute="bottom" id="Lt3-Fj-5TX"/>
+                            <constraint firstAttribute="trailing" secondItem="G9Y-ee-Xbf" secondAttribute="trailing" id="pTT-rX-ZvS"/>
+                            <constraint firstItem="vuP-RJ-mZK" firstAttribute="centerY" secondItem="G9Y-ee-Xbf" secondAttribute="centerY" id="yuz-9Q-nJR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login Screen" id="mx3-OI-v94"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="dribbbleButton" destination="G9Y-ee-Xbf" id="xg9-4a-lCC"/>
+                        <outlet property="indicator" destination="vuP-RJ-mZK" id="868-fM-PIw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322.5" y="319.5"/>
+        </scene>
+        <!--Shots-->
+        <scene sceneID="v1t-gq-j4X">
+            <objects>
+                <viewController storyboardIdentifier="ShotsScreenViewController" title="Shots" id="oN4-q6-F1v" customClass="ShotsScreenViewController" customModule="DribbbleClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ua7-jZ-pVg"/>
+                        <viewControllerLayoutGuide type="bottom" id="55f-7h-7Fi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PWO-Gz-Gax">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LJk-Mn-0rC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="575"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RwT-cG-dN9">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nFn-j0-o4s">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lAh-cD-Ziz">
+                                <rect key="frame" x="-3" y="0.0" width="381" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lAh-cD-Ziz" secondAttribute="height" multiplier="375:28" id="mGK-pf-l2W"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Popular"/>
+                                    <segment title="Recent"/>
+                                    <segment title="Gif"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortingControllerValueChanged:" destination="oN4-q6-F1v" eventType="valueChanged" id="Mvy-l3-RqZ"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LJk-Mn-0rC" firstAttribute="top" secondItem="lAh-cD-Ziz" secondAttribute="bottom" id="2jc-cy-5Td"/>
+                            <constraint firstItem="LJk-Mn-0rC" firstAttribute="leading" secondItem="PWO-Gz-Gax" secondAttribute="leading" id="7jy-h4-S4J"/>
+                            <constraint firstItem="lAh-cD-Ziz" firstAttribute="top" secondItem="ua7-jZ-pVg" secondAttribute="bottom" id="F7G-FB-c6o"/>
+                            <constraint firstAttribute="trailing" secondItem="LJk-Mn-0rC" secondAttribute="trailing" id="PzD-Pt-1QH"/>
+                            <constraint firstItem="55f-7h-7Fi" firstAttribute="top" secondItem="LJk-Mn-0rC" secondAttribute="bottom" id="UaU-g7-g0i"/>
+                            <constraint firstItem="lAh-cD-Ziz" firstAttribute="leading" secondItem="PWO-Gz-Gax" secondAttribute="leading" constant="-3" id="aex-GL-Htc"/>
+                            <constraint firstAttribute="trailing" secondItem="lAh-cD-Ziz" secondAttribute="trailing" constant="-3" id="hBv-v5-uxj"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="shotsCollectionView" destination="LJk-Mn-0rC" id="b75-iS-mzy"/>
+                        <outlet property="sortControl" destination="lAh-cD-Ziz" id="gxa-0J-7B4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IgK-U9-Civ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328.5" y="1222.5"/>
+        </scene>
+        <!--Shot-->
+        <scene sceneID="wWp-kq-Xc9">
+            <objects>
+                <viewController storyboardIdentifier="ShotDetailScreenViewController" title="Shot" id="eSW-gr-LQh" customClass="ShotDetailScreenViewController" customModule="DribbbleClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="74X-ga-L2w"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Ck-4Z-Hp6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LJv-bo-gY9">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C2u-mG-QJQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Ck-4Z-Hp6" firstAttribute="top" secondItem="C2u-mG-QJQ" secondAttribute="bottom" id="BAy-aL-wOu"/>
+                            <constraint firstAttribute="trailing" secondItem="C2u-mG-QJQ" secondAttribute="trailing" id="SJU-B8-opF"/>
+                            <constraint firstItem="C2u-mG-QJQ" firstAttribute="leading" secondItem="LJv-bo-gY9" secondAttribute="leading" id="V2f-IU-oXs"/>
+                            <constraint firstItem="C2u-mG-QJQ" firstAttribute="top" secondItem="74X-ga-L2w" secondAttribute="bottom" id="ckw-F3-tbe"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="C2u-mG-QJQ" id="J6S-0g-0UK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AOg-At-A4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.5" y="1222.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I5K-ao-VFz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yfU-Vl-EXs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y4P-dc-LNE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="msZ-LI-7iU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="832"/>
+        </scene>
+    </scenes>
+</document>
