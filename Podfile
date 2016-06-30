@@ -16,4 +16,7 @@ end
 
 target 'DribbbleClientTests'  do
   common_pods
+  
+  pod 'Quick'
+  pod 'Nimble'
 end

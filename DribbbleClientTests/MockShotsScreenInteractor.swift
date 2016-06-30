@@ -18,9 +18,12 @@ class MockShotsScreenInteractor: ShotsScreenInteractor
     
     var currentResponse     :DribbbleServiceResponse?
     
-    
-    var stubSorting =   ShotSorting(sort: .Recent)
-    override var currentSorting: ShotSorting! {get{ return stubSorting} set{}}
+
+    override init() {
+        super.init()
+        
+        self.currentSorting =   ShotSorting(sort: .Recent)
+    }
     
     
     override func fetchShots(with sorting: ShotSorting) {

@@ -11,7 +11,7 @@ class ShotDetailScreenWireFrame: ShotDetailScreenWireFrameProtocol
     weak var shotDetailView  :ShotDetailScreenViewProtocol!
     weak var navController   :UINavigationController?
     
-    func presentShotDetailScreenModule(fromView view: AnyObject, withShot:Shot)
+    func presentShotDetailScreenModule(fromView view: AnyObject, withShot shot:Shot)
     {
         
         // Generating module components
@@ -41,7 +41,7 @@ class ShotDetailScreenWireFrame: ShotDetailScreenWireFrameProtocol
         
         self.navController!.pushViewController(self.shotDetailView as! UIViewController, animated: true)
         
-        presenter.displayShot(shot: withShot)
+        presenter.configureView(withShot: shot)
         
     }
     
