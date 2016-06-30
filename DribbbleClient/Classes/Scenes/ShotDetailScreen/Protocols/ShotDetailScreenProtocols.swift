@@ -18,7 +18,7 @@ protocol ShotDetailScreenViewProtocol: class
 
 protocol ShotDetailScreenWireFrameProtocol: class
 {
-    func presentShotDetailScreenModule(fromView view: AnyObject, withShot:Shot)
+    func presentShotDetailScreenModule(fromView view: AnyObject, withShot shot:Shot)
     /**
     * Add here your methods for communication PRESENTER -> WIREFRAME
     */
@@ -39,13 +39,13 @@ protocol ShotDetailScreenWireFrameOutputProtocol: class
 protocol ShotDetailScreenPresenterProtocol: class
 {
     weak var view        : ShotDetailScreenViewProtocol? { get set }
-    var interactor  : ShotDetailScreenInteractorInputProtocol? { get set }
+    var interactor       : ShotDetailScreenInteractorInputProtocol? { get set }
     weak var wireFrame   : ShotDetailScreenWireFrameProtocol? { get set }
     /**
     * Add here your methods for communication VIEW -> PRESENTER
     */
     
-    func displayShot(shot shot:Shot)
+    func configureView(withShot shot:Shot)
     func dismissControllerAction()
     func fetchCommentsAction(shotID shotID:Int, commentsCount:Int)
 }

@@ -9,8 +9,8 @@ import UIKit
 class LoginScreenPresenter: LoginScreenPresenterProtocol, LoginScreenInteractorOutputProtocol
 {
     weak var view        : LoginScreenViewProtocol?
-    var interactor  : LoginScreenInteractorInputProtocol?
-    var wireFrame   : LoginScreenWireFrameProtocol?
+    var interactor       : LoginScreenInteractorInputProtocol?
+    weak var wireFrame   : LoginScreenWireFrameProtocol?
     
     
     func authenticateAction( )

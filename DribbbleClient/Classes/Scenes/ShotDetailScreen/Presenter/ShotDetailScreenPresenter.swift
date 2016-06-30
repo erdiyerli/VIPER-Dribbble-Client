@@ -8,12 +8,12 @@ import Foundation
 class ShotDetailScreenPresenter: ShotDetailScreenPresenterProtocol, ShotDetailScreenInteractorOutputProtocol
 {
     weak var view        : ShotDetailScreenViewProtocol?
-    var interactor  : ShotDetailScreenInteractorInputProtocol?
+    var interactor       : ShotDetailScreenInteractorInputProtocol?
     weak var wireFrame   : ShotDetailScreenWireFrameProtocol?
     
     
-    func displayShot(shot shot: Shot)
-    {
+    func configureView(withShot shot: Shot) {
+        
         guard let view = self.view else {return}
         
         view.displayShot(shot)

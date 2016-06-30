@@ -12,23 +12,24 @@ import UIKit
 
 class MockShotDetailScreenPresenter: ShotDetailScreenPresenter
 {
-    var displayShotCalled           :Bool   =   false
+    var configureViewCalled           :Bool   =   false
     var commentsFoundCalled         :Bool   =   false
     var fetchCommentActionCalled    :Bool   =   false
     
     var foundComments   :[Comment]?
     
-    override func displayShot(shot shot: Shot)
+    override func configureView(withShot shot: Shot)
     {
-        super.displayShot(shot: shot)
+        super.configureView(withShot: shot)
         
-        self.displayShotCalled  =   true
+        self.configureViewCalled    =   true
     }
     
     override func commentsFound(comments: [Comment]) {
         super.commentsFound(comments)
         
         self.commentsFoundCalled    =   true
+        self.foundComments          =   comments
     }
     
     override func fetchCommentsAction(shotID shotID: Int, commentsCount: Int) {
